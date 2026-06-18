@@ -80,11 +80,19 @@
 
             <!-- Submit Button -->
             <button onclick="submitProof()" 
-                    class="mt-12 w-full py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-semibold text-lg transition flex items-center justify-center gap-3">
-                <i data-lucide="send" class="w-6 h-6"></i>
-                Send Proof to Live Chat
+                    id="submit-proof-button"
+                    class="mt-12 w-full py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-semibold text-lg transition flex items-center justify-center gap-3 disabled:cursor-not-allowed disabled:opacity-70">
+                <span id="send-button-text" class="flex items-center gap-3">
+                    <i data-lucide="send" class="w-6 h-6"></i>
+                    Send Proof to Live Chat
+                </span>
+                <svg id="send-spinner" class="hidden w-5 h-5 animate-spin text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+                    <path d="M22 12a10 10 0 0 1-10 10" stroke-linecap="round"></path>
+                </svg>
             </button>
 
+            <p id="proof-status" class="text-center text-xs mt-4 text-slate-500 dark:text-zinc-400"></p>
             <p class="text-center text-xs text-slate-400 dark:text-zinc-500 mt-8">
                 Our support team will verify your payment within minutes
             </p>
@@ -106,82 +114,7 @@
         </div>
     </div>
 
-    <script>
-        lucide.createIcons();
-
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-
-        function setTheme(isDark) {
-            if (isDark) {
-                document.documentElement.classList.add('dark');
-                themeIcon.setAttribute('data-lucide', 'sun');
-            } else {
-                document.documentElement.classList.remove('dark');
-                themeIcon.setAttribute('data-lucide', 'moon');
-            }
-            lucide.createIcons();
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const isDark = document.documentElement.classList.contains('dark');
-            setTheme(!isDark);
-        });
-
-        if (localStorage.getItem('theme') === 'dark') setTheme(true);
-
-        // Image Preview
-        document.getElementById('proof-upload').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(ev) {
-                    document.getElementById('image-preview').src = ev.target.result;
-                    document.getElementById('preview').classList.remove('hidden');
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-
-        function submitProof() {
-            const txHash = document.getElementById('tx-hash').value.trim();
-            if (!txHash) {
-                alert("Please enter the Transaction Hash");
-                return;
-            }
-            document.getElementById('success-screen').classList.remove('hidden');
-        }
-
-        function formatCurrency(value) {
-            return new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 0
-            }).format(value);
-        }
-
-        function initializeConfirmData() {
-            const params = new URLSearchParams(window.location.search);
-            const celebrity = params.get('celebrity') || 'Michael Lynx';
-            const votes = Math.max(1, Number(params.get('votes')) || 1);
-            const price = Number(params.get('price')) || 500;
-            const total = Number(params.get('total')) || votes * price;
-
-            document.getElementById('celeb-name').textContent = celebrity;
-            document.getElementById('total-amount').textContent = formatCurrency(total);
-        }
-
-        function goHome() {
-            window.location.href = "index.html";
-        }
-
-        window.addEventListener('load', () => {
-            if (localStorage.getItem('theme') === 'dark') setTheme(true);
-            initializeConfirmData();
-        });
-    </script>
+    <script src="js/config.js"></script>
+    <script src="js/confirmpayment.js"></script>
 </body>
 </html>
