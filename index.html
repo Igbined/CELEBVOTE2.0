@@ -17,7 +17,7 @@
     <header class="bg-white/80 dark:bg-black/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 dark:border-white/10">
         <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2 tracking-tight">
-                <span class="bg-blue-600 p-1.5 rounded-lg text-white"><i data-lucide="award"></i></span> GucciBrand
+                <span class="bg-blue-600 p-1.5 rounded-lg text-white"><i data-lucide="award"></i></span> EliteVote
             </h1>
             
             <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center rounded-2xl bg-slate-100 hover:bg-slate-200 dark:bg-white/10 dark:hover:bg-white/20 transition-all">
@@ -150,7 +150,237 @@
                     </button>
                 </div>
             </div>
-            
+
+            <!-- New Card 6 -->
+            <div x-data="{ votes: 1, price: 500 }" data-celeb="Chukwudi Onu" data-price="500" class="group bg-white dark:bg-black rounded-3xl p-8 shadow-sm border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-cyan-100 to-sky-100 dark:from-zinc-900 dark:to-black rounded-2xl mb-6 overflow-hidden relative">
+                    <img src="IMAGES/photo_2026-06-18_16-38-33.jpg" alt="Chukwudi Onu" class="object-contain w-full h-full object-center">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Chukwudi Onu</h3>
+                <p class="text-slate-500 dark:text-zinc-400 mb-8 leading-relaxed">Charismatic Nollywood star celebrated for romantic comedies and theater performances.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Vote Quantity</label>
+                        <input type="number" x-model="votes" min="1" class="w-full bg-slate-50 dark:bg-zinc-950 border-0 p-4 rounded-xl font-semibold text-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    </div>
+                    <div class="bg-slate-50 dark:bg-zinc-950 p-4 rounded-2xl flex justify-between items-center border border-slate-100 dark:border-white/10">
+                        <span class="text-slate-500 dark:text-zinc-400 font-medium">Total Vote:</span>
+                        <span class="text-3xl font-bold text-blue-600">$<span x-text="(votes * price).toLocaleString()"></span></span>
+                    </div>
+                    <button type="button" class="w-full bg-slate-900 dark:bg-white dark:text-black text-white py-4 rounded-2xl font-semibold hover:bg-blue-600 dark:hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 confirm-purchase">
+                        Confirm Purchase <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Card 7 -->
+            <div x-data="{ votes: 1, price: 500 }" data-celeb="Adaeze Nwosu" data-price="500" class="group bg-white dark:bg-black rounded-3xl p-8 shadow-sm border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-rose-100 to-fuchsia-100 dark:from-zinc-900 dark:to-black rounded-2xl mb-6 overflow-hidden relative">
+                    <img src="IMAGES/photo_2026-06-18_16-38-41.jpg" alt="Adaeze Nwosu" class="object-contain w-full h-full object-center">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Adaeze Nwosu</h3>
+                <p class="text-slate-500 dark:text-zinc-400 mb-8 leading-relaxed">Award-winning actress and producer known for powerful dramatic roles in Nigerian cinema.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Vote Quantity</label>
+                        <input type="number" x-model="votes" min="1" class="w-full bg-slate-50 dark:bg-zinc-950 border-0 p-4 rounded-xl font-semibold text-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    </div>
+                    <div class="bg-slate-50 dark:bg-zinc-950 p-4 rounded-2xl flex justify-between items-center border border-slate-100 dark:border-white/10">
+                        <span class="text-slate-500 dark:text-zinc-400 font-medium">Total Vote:</span>
+                        <span class="text-3xl font-bold text-blue-600">$<span x-text="(votes * price).toLocaleString()"></span></span>
+                    </div>
+                    <button type="button" class="w-full bg-slate-900 dark:bg-white dark:text-black text-white py-4 rounded-2xl font-semibold hover:bg-blue-600 dark:hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 confirm-purchase">
+                        Confirm Purchase <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Card 8 -->
+            <div x-data="{ votes: 1, price: 500 }" data-celeb="Emmanuel Okoro" data-price="500" class="group bg-white dark:bg-black rounded-3xl p-8 shadow-sm border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-lime-100 to-green-100 dark:from-zinc-900 dark:to-black rounded-2xl mb-6 overflow-hidden relative">
+                    <img src="IMAGES/photo_2026-06-18_16-38-52.jpg" alt="Emmanuel Okoro" class="object-contain w-full h-full object-center">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Emmanuel Okoro</h3>
+                <p class="text-slate-500 dark:text-zinc-400 mb-8 leading-relaxed">Popular comedian and actor bringing laughter to audiences across Nollywood productions.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Vote Quantity</label>
+                        <input type="number" x-model="votes" min="1" class="w-full bg-slate-50 dark:bg-zinc-950 border-0 p-4 rounded-xl font-semibold text-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    </div>
+                    <div class="bg-slate-50 dark:bg-zinc-950 p-4 rounded-2xl flex justify-between items-center border border-slate-100 dark:border-white/10">
+                        <span class="text-slate-500 dark:text-zinc-400 font-medium">Total Vote:</span>
+                        <span class="text-3xl font-bold text-blue-600">$<span x-text="(votes * price).toLocaleString()"></span></span>
+                    </div>
+                    <button type="button" class="w-full bg-slate-900 dark:bg-white dark:text-black text-white py-4 rounded-2xl font-semibold hover:bg-blue-600 dark:hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 confirm-purchase">
+                        Confirm Purchase <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Card 9 -->
+            <div x-data="{ votes: 1, price: 500 }" data-celeb="Ogechi Amadi" data-price="500" class="group bg-white dark:bg-black rounded-3xl p-8 shadow-sm border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-violet-100 to-purple-100 dark:from-zinc-900 dark:to-black rounded-2xl mb-6 overflow-hidden relative">
+                    <img src="IMAGES/photo_2026-06-18_16-38-56.jpg" alt="Ogechi Amadi" class="object-contain w-full h-full object-center">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Ogechi Amadi</h3>
+                <p class="text-slate-500 dark:text-zinc-400 mb-8 leading-relaxed">Versatile actress and singer known for her captivating voice and emotional performances.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Vote Quantity</label>
+                        <input type="number" x-model="votes" min="1" class="w-full bg-slate-50 dark:bg-zinc-950 border-0 p-4 rounded-xl font-semibold text-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    </div>
+                    <div class="bg-slate-50 dark:bg-zinc-950 p-4 rounded-2xl flex justify-between items-center border border-slate-100 dark:border-white/10">
+                        <span class="text-slate-500 dark:text-zinc-400 font-medium">Total Vote:</span>
+                        <span class="text-3xl font-bold text-blue-600">$<span x-text="(votes * price).toLocaleString()"></span></span>
+                    </div>
+                    <button type="button" class="w-full bg-slate-900 dark:bg-white dark:text-black text-white py-4 rounded-2xl font-semibold hover:bg-blue-600 dark:hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 confirm-purchase">
+                        Confirm Purchase <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Card 10 -->
+            <div x-data="{ votes: 1, price: 500 }" data-celeb="Kingsley Eze" data-price="500" class="group bg-white dark:bg-black rounded-3xl p-8 shadow-sm border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-orange-100 to-amber-100 dark:from-zinc-900 dark:to-black rounded-2xl mb-6 overflow-hidden relative">
+                    <img src="IMAGES/photo_2026-06-18_16-47-36.jpg" alt="Kingsley Eze" class="object-contain w-full h-full object-center">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Kingsley Eze</h3>
+                <p class="text-slate-500 dark:text-zinc-400 mb-8 leading-relaxed">Action-packed actor famous for thrilling roles and martial arts scenes in Nollywood blockbusters.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Vote Quantity</label>
+                        <input type="number" x-model="votes" min="1" class="w-full bg-slate-50 dark:bg-zinc-950 border-0 p-4 rounded-xl font-semibold text-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    </div>
+                    <div class="bg-slate-50 dark:bg-zinc-950 p-4 rounded-2xl flex justify-between items-center border border-slate-100 dark:border-white/10">
+                        <span class="text-slate-500 dark:text-zinc-400 font-medium">Total Vote:</span>
+                        <span class="text-3xl font-bold text-blue-600">$<span x-text="(votes * price).toLocaleString()"></span></span>
+                    </div>
+                    <button type="button" class="w-full bg-slate-900 dark:bg-white dark:text-black text-white py-4 rounded-2xl font-semibold hover:bg-blue-600 dark:hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 confirm-purchase">
+                        Confirm Purchase <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Card 11 -->
+            <div x-data="{ votes: 1, price: 500 }" data-celeb="Nkechi Okonkwo" data-price="500" class="group bg-white dark:bg-black rounded-3xl p-8 shadow-sm border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-pink-100 to-rose-100 dark:from-zinc-900 dark:to-black rounded-2xl mb-6 overflow-hidden relative">
+                    <img src="IMAGES/photo_2026-06-18_16-38-41.jpg" alt="Nkechi Okonkwo" class="object-contain w-full h-full object-center">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Nkechi Okonkwo</h3>
+                <p class="text-slate-500 dark:text-zinc-400 mb-8 leading-relaxed">Elegant actress and fashion icon known for her sophisticated roles and red carpet presence.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Vote Quantity</label>
+                        <input type="number" x-model="votes" min="1" class="w-full bg-slate-50 dark:bg-zinc-950 border-0 p-4 rounded-xl font-semibold text-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    </div>
+                    <div class="bg-slate-50 dark:bg-zinc-950 p-4 rounded-2xl flex justify-between items-center border border-slate-100 dark:border-white/10">
+                        <span class="text-slate-500 dark:text-zinc-400 font-medium">Total Vote:</span>
+                        <span class="text-3xl font-bold text-blue-600">$<span x-text="(votes * price).toLocaleString()"></span></span>
+                    </div>
+                    <button type="button" class="w-full bg-slate-900 dark:bg-white dark:text-black text-white py-4 rounded-2xl font-semibold hover:bg-blue-600 dark:hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 confirm-purchase">
+                        Confirm Purchase <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Card 12 -->
+            <div x-data="{ votes: 1, price: 500 }" data-celeb="Obinna Chukwu" data-price="500" class="group bg-white dark:bg-black rounded-3xl p-8 shadow-sm border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-zinc-900 dark:to-black rounded-2xl mb-6 overflow-hidden relative">
+                    <img src="IMAGES/photo_2026-06-18_16-38-52.jpg" alt="Obinna Chukwu" class="object-contain w-full h-full object-center">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Obinna Chukwu</h3>
+                <p class="text-slate-500 dark:text-zinc-400 mb-8 leading-relaxed">Dynamic young actor making waves with intense dramatic and action-packed performances.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Vote Quantity</label>
+                        <input type="number" x-model="votes" min="1" class="w-full bg-slate-50 dark:bg-zinc-950 border-0 p-4 rounded-xl font-semibold text-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    </div>
+                    <div class="bg-slate-50 dark:bg-zinc-950 p-4 rounded-2xl flex justify-between items-center border border-slate-100 dark:border-white/10">
+                        <span class="text-slate-500 dark:text-zinc-400 font-medium">Total Vote:</span>
+                        <span class="text-3xl font-bold text-blue-600">$<span x-text="(votes * price).toLocaleString()"></span></span>
+                    </div>
+                    <button type="button" class="w-full bg-slate-900 dark:bg-white dark:text-black text-white py-4 rounded-2xl font-semibold hover:bg-blue-600 dark:hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 confirm-purchase">
+                        Confirm Purchase <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Card 13 -->
+            <div x-data="{ votes: 1, price: 500 }" data-celeb="Chioma Eze" data-price="500" class="group bg-white dark:bg-black rounded-3xl p-8 shadow-sm border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-zinc-900 dark:to-black rounded-2xl mb-6 overflow-hidden relative">
+                    <img src="IMAGES/photo_2026-06-18_16-38-56.jpg" alt="Chioma Eze" class="object-contain w-full h-full object-center">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Chioma Eze</h3>
+                <p class="text-slate-500 dark:text-zinc-400 mb-8 leading-relaxed">Rising star known for her natural acting talent and strong female lead roles.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Vote Quantity</label>
+                        <input type="number" x-model="votes" min="1" class="w-full bg-slate-50 dark:bg-zinc-950 border-0 p-4 rounded-xl font-semibold text-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    </div>
+                    <div class="bg-slate-50 dark:bg-zinc-950 p-4 rounded-2xl flex justify-between items-center border border-slate-100 dark:border-white/10">
+                        <span class="text-slate-500 dark:text-zinc-400 font-medium">Total Vote:</span>
+                        <span class="text-3xl font-bold text-blue-600">$<span x-text="(votes * price).toLocaleString()"></span></span>
+                    </div>
+                    <button type="button" class="w-full bg-slate-900 dark:bg-white dark:text-black text-white py-4 rounded-2xl font-semibold hover:bg-blue-600 dark:hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 confirm-purchase">
+                        Confirm Purchase <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Card 14 -->
+            <div x-data="{ votes: 1, price: 500 }" data-celeb="Uche Nnamdi" data-price="500" class="group bg-white dark:bg-black rounded-3xl p-8 shadow-sm border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-yellow-100 to-amber-100 dark:from-zinc-900 dark:to-black rounded-2xl mb-6 overflow-hidden relative">
+                    <img src="IMAGES/photo_2026-06-18_16-47-36.jpg" alt="Uche Nnamdi" class="object-contain w-full h-full object-center">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Uche Nnamdi</h3>
+                <p class="text-slate-500 dark:text-zinc-400 mb-8 leading-relaxed">Veteran performer with decades of experience in both film and television.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Vote Quantity</label>
+                        <input type="number" x-model="votes" min="1" class="w-full bg-slate-50 dark:bg-zinc-950 border-0 p-4 rounded-xl font-semibold text-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    </div>
+                    <div class="bg-slate-50 dark:bg-zinc-950 p-4 rounded-2xl flex justify-between items-center border border-slate-100 dark:border-white/10">
+                        <span class="text-slate-500 dark:text-zinc-400 font-medium">Total Vote:</span>
+                        <span class="text-3xl font-bold text-blue-600">$<span x-text="(votes * price).toLocaleString()"></span></span>
+                    </div>
+                    <button type="button" class="w-full bg-slate-900 dark:bg-white dark:text-black text-white py-4 rounded-2xl font-semibold hover:bg-blue-600 dark:hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 confirm-purchase">
+                        Confirm Purchase <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Card 15 -->
+            <div x-data="{ votes: 1, price: 500 }" data-celeb="Amara Obi" data-price="500" class="group bg-white dark:bg-black rounded-3xl p-8 shadow-sm border border-slate-200 dark:border-white/10 hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-purple-100 to-pink-100 dark:from-zinc-900 dark:to-black rounded-2xl mb-6 overflow-hidden relative">
+                    <img src="IMAGES/photo_2026-06-18_16-38-33.jpg" alt="Amara Obi" class="object-contain w-full h-full object-center">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Amara Obi</h3>
+                <p class="text-slate-500 dark:text-zinc-400 mb-8 leading-relaxed">Multi-talented entertainer known for her roles in both drama and musical Nollywood films.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Vote Quantity</label>
+                        <input type="number" x-model="votes" min="1" class="w-full bg-slate-50 dark:bg-zinc-950 border-0 p-4 rounded-xl font-semibold text-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    </div>
+                    <div class="bg-slate-50 dark:bg-zinc-950 p-4 rounded-2xl flex justify-between items-center border border-slate-100 dark:border-white/10">
+                        <span class="text-slate-500 dark:text-zinc-400 font-medium">Total Vote:</span>
+                        <span class="text-3xl font-bold text-blue-600">$<span x-text="(votes * price).toLocaleString()"></span></span>
+                    </div>
+                    <button type="button" class="w-full bg-slate-900 dark:bg-white dark:text-black text-white py-4 rounded-2xl font-semibold hover:bg-blue-600 dark:hover:bg-blue-600 transition-all active:scale-95 flex items-center justify-center gap-2 confirm-purchase">
+                        Confirm Purchase <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
         </div>
     </main>
 
