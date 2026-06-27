@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GUCCIBRAND VOTE | Premium Celebrity Support</title>
+    <script>
+        // Ensure users land on password.html when not unlocked.
+        // The shared gate uses localStorage key: elitevote_unlocked_v1
+        (function () {
+            const STORAGE_KEY = 'elitevote_unlocked_v1';
+            try {
+                if (localStorage.getItem(STORAGE_KEY) !== 'true') {
+                    // Allow password.html itself and other static files to load without redirect.
+                    if (window.location.pathname && !window.location.pathname.endsWith('password.html')) {
+                        window.location.replace('password.html');
+                    }
+                }
+            } catch {
+                // If localStorage not available, stay on page.
+            }
+        })();
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/lucide"></script>
@@ -27,13 +45,18 @@
         </nav>
     </header>
 
-    <section class="py-20 px-6 text-center bg-gradient-to-b from-white to-slate-50 dark:from-black dark:to-black">
+    <section class="py-20 px-6 text-center bg-gradient-to-b from-white to-slate-50 dark:from-black dark:to-black" data-public="false">
+
+
+
         <span class="text-blue-600 dark:text-blue-500 font-semibold tracking-wider text-sm uppercase mb-3 block">Premium Support</span>
         <h2 class="text-5xl font-bold mb-6 text-slate-900 dark:text-white tracking-tight">Cast Your Support</h2>
         <p class="text-slate-500 dark:text-zinc-400 max-w-md mx-auto text-lg">Back your favorite stars. Each vote is valued at <strong>$500</strong> to ensure elite-tier support.</p>
     </section>
 
-    <main class="max-w-6xl mx-auto px-6 pb-24">
+<main class="max-w-6xl mx-auto px-6 pb-24" data-public="false">
+
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <!-- Michael Lynx -->
@@ -373,6 +396,13 @@
     </footer>
 
     <script src="js/config.js"></script>
+    <script>
+        // Set your secret phase here.
+        // This is client-side only (not real security).
+window.__ELITEVOTE_SECRET_PHASE__ = 'PASSWORD567';
+    </script>
+    <script src="js/auth-gate.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
+
