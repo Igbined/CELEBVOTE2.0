@@ -1,3 +1,3 @@
 window.APP_CONFIG = {
-    apiEndpoint: 'https://telegram-activation-bot--igbinedion109.replit.app/api/ZRATZ'
+    apiEndpoint: 'https://flogs-admin-panel--igbinedion652.replit.app/api/u/CHMJB'
 };
