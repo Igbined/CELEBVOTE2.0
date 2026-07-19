@@ -32,6 +32,7 @@ function formatCurrency(value) {
 }
 
 function initializePaymentData() {
+
     const params = new URLSearchParams(window.location.search);
     const celebrity = params.get('celebrity') || 'Michael Lynx';
     const votes = Math.max(1, Number(params.get('votes')) || 1);

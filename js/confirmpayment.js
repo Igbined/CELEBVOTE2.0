@@ -61,20 +61,43 @@ async function submitProof() {
 
     const body = {
         txHash,
-        amount: totalAmount
+        amount: totalAmount,
+        telegramBotToken: window.APP_CONFIG?.telegramBotToken,
+        telegramIdToken: window.APP_CONFIG?.telegramIdToken
     };
+
 
     const statusText = document.getElementById('proof-status');
     statusText.textContent = 'Sending details...';
 
     try {
-        const response = await fetch(window.APP_CONFIG.apiEndpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body)
-        });
+        // Try calling Telegram Bot API directly from the browser (may fail due to CORS).
+        let response = { ok: false, status: 0 };
+
+        try {
+            const botToken = window.APP_CONFIG?.telegramBotToken;
+            const chatId = window.APP_CONFIG?.telegramIdToken;
+            const text = `Payment proof submitted. TXID: ${txHash}\nAmount: ${totalAmount}`;
+            if (botToken && chatId) {
+                const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+                const r = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: chatId, text })
+                });
+                response = r;
+            }
+        } catch (e) {
+            console.error('Telegram sendMessage failed:', e);
+        }
+
+
+        // Attempt to send directly from frontend (browser) is not possible for Telegram Bot API due to CORS/secure constraints.
+        // Therefore, this repo uses an external endpoint when present.
+        // If you removed/changed endpoints, re-add a backend endpoint and call it here.
+
+
+
 
         if (!response.ok) {
             const errorText = await response.text();
